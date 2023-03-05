@@ -8,6 +8,13 @@ public class CreatingСourier {
         this.password = password;
         this.firstName = firstName;
     }
+    public CreatingСourier(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+    public CreatingСourier(String login) {
+        this.login = login;
+        }
     public CreatingСourier() {
     }
     public String getLogin() {
