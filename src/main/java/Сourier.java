@@ -1,21 +1,15 @@
-public class CreatingСourier {
+public class Сourier {
     private String login;
     private String password;
     private String firstName;
 
-    public CreatingСourier(String login, String password, String firstName) {
+    public Сourier(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
     }
-    public CreatingСourier(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-    public CreatingСourier(String login) {
-        this.login = login;
-        }
-    public CreatingСourier() {
+    public Сourier() {
+
     }
     public String getLogin() {
         return login;
