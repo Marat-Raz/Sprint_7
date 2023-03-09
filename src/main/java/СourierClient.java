@@ -1,36 +1,40 @@
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
 
 public class СourierClient extends Client {
-    //private static String CREATE_PATH = "/api/v1/courier/";
-    public static final String LOGIN = "/login";
+    public static final String COURIER_URI = BASE_URL + "courier/";
+    public static final String COURIER_LOGIN = COURIER_URI + "login/";
 
     //private static final String DELETE_PATH = "/api/v1/courier/";
-        public ValidatableResponse creatingСourier(Сourier courier){
+    @Step("Create courier {courier}")
+    public ValidatableResponse creatingСourier(Сourier courier){
         return given()
                 .spec(getBaseSpec())
                 .body(courier)
                 .when()
-                .post(BASE_URL)
+                .post(COURIER_URI)
                 .then();
 
     }
+    @Step("Login as {courierCredentials}")
     public ValidatableResponse courierLogin(CourierCredentials courierCredentials) {
         return given()
                 .spec(getBaseSpec())
                 .body(courierCredentials)
                 .when()
-                .post(BASE_URL + LOGIN)
+                .post(COURIER_LOGIN)
                 .then();
 
     }
 
+    @Step("Delete courier {id}")
     public ValidatableResponse deleteCourier(int id) {
         return given()
                 .spec(getBaseSpec())
                 .when()
-                .delete(BASE_URL + "/" + id)
+                .delete(COURIER_URI + id)
                 .then();
 
     }
