@@ -7,15 +7,14 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 import static org.apache.http.HttpStatus.*;
-// import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.junit.Assert.*;
 
 public class СourierClientTest {
     private Сourier courier;
     private СourierClient сourierClient;
     private int id;
+
     @BeforeClass
     public static void globalSetUp() {
         RestAssured.filters(
@@ -45,7 +44,7 @@ public class СourierClientTest {
 
         сourierClient.deleteCourier(id);
 
-        }
+    }
     @Test
     @DisplayName("Нельзя создать двух одинаковых курьеров")
     public void cannotСreateTwoIdenticalCouriersTest() {
@@ -88,6 +87,7 @@ public class СourierClientTest {
         assertEquals("Status code is incorrect",SC_BAD_REQUEST, statusCode);
 
     }
+
     @Test
     @DisplayName("Если создать пользователя с логином, который уже есть, возвращается ошибка")
     public void cannotCreateCourierIfloginExistsTest() {
