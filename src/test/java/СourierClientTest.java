@@ -1,9 +1,11 @@
+import сlient.СourierClient;
 import io.qameta.allure.junit4.*;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.ValidatableResponse;
+import сourierModel.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,13 +21,12 @@ public class СourierClientTest {
     public static void globalSetUp() {
         RestAssured.filters(
                 new RequestLoggingFilter(), new ResponseLoggingFilter(),
-                new AllureRestAssured()
-        );
+                new AllureRestAssured());
     }
 
     @Before
     public void setUp() {
-        courier = CourierGenerator.getCourier();
+        Сourier courier = CourierGenerator.getCourier();
         сourierClient = new СourierClient();
     }
 

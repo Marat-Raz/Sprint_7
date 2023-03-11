@@ -1,9 +1,13 @@
+import сlient.СourierClient;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.ValidatableResponse;
+import сourierModel.CourierCredentials;
+import сourierModel.CourierGenerator;
+import сourierModel.Сourier;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
